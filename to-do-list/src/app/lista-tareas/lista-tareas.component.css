@@ -1,0 +1,11 @@
+.completada {
+background-color: rgba(243, 9, 9, 0.555);
+}
+
+table, th ,td{
+    margin: 10px;
+    border: 1px solid black;
+}
+td{
+    background-color: rgba(0, 128, 0, 0.24);
+}
