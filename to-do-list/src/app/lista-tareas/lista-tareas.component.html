@@ -1,26 +1,33 @@
-
+<!-- Esta es la tabla que muestra la lista de tareas. -->
 <table>
-<thead>
-    <tr>
-    <th>Título</th>
-    <th>Descripción</th>
-    <th>Completar</th>
-    <th>Eliminar</th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let tarea of tareas; index as i">
-    <td [class.completada]="tarea.completada">{{tarea.titulo}}</td>
-    <td  [class.completada]="tarea.completada">{{tarea.descripcion}}</td>
-    <td>
-        <button (click)="completarTarea(i)">
-        {{tarea.completada ? 'Desmarcar como completada' : 'Marcar como completada'}}
-        </button>
-    </td>
-    <td>
-        <button (click)="eliminarTarea(i)">Eliminar</button>
-    </td>
-    </tr>
-</tbody>
-</table>
-<app-formulario-tarea (tareaCreada)="agregarTarea($event)"></app-formulario-tarea>
+    <thead>
+        <tr>
+        <!-- Las cabeceras de las columnas de la tabla. -->
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Completar</th>
+        <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Para cada tarea en la lista de tareas, crea una fila en la tabla. -->
+        <tr *ngFor="let tarea of tareas; index as i">
+        <!-- Muestra el título y la descripción de la tarea. -->
+        <td [class.completada]="tarea.completada">{{tarea.titulo}}</td>
+        <td  [class.completada]="tarea.completada">{{tarea.descripcion}}</td>
+        <td>
+            <!-- Un botón que marca la tarea como completada o no completada por su index. -->
+            <button (click)="completarTarea(i)">
+            {{tarea.completada ? 'Desmarcar como completada' : 'Marcar como completada'}}
+            </button>
+        </td>
+        <td>
+            <!-- Un botón que elimina la tarea de la lista de tareas por su index. -->
+            <button (click)="eliminarTarea(i)">Eliminar</button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    <!-- Aquí se incluye el componente del formulario de la tarea para luego 
+        pasarlo todo junto en app.component.html como un solo componente (componente anidado)-->
+    <app-formulario-tarea (tareaCreada)="agregarTarea($event)"></app-formulario-tarea>

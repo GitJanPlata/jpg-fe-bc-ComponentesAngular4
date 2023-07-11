@@ -1,11 +1,15 @@
+<!-- Este es el formulario de la tarea. Cuando se envía el formulario, se llama al método agregarTarea(). -->
 <form (ngSubmit)="agregarTarea()">
     <div>
-      <input [(ngModel)]="titulo" name="titulo" placeholder="Título de la tarea" required />
+    <!-- Este es el campo de entrada para el título de la tarea. -->
+    <input [(ngModel)]="titulo" name="titulo" placeholder="Título de la tarea" required />
     </div>
     <div>
-      <textarea [(ngModel)]="descripcion" name="descripcion" placeholder="Descripción de la tarea"required></textarea>
+    <!-- Este es el campo de entrada para la descripción de la tarea. -->
+    <textarea [(ngModel)]="descripcion" name="descripcion" placeholder="Descripción de la tarea"required></textarea>
     </div>
     <div>
-      <button type="submit">Agregar tarea</button>
+    <!-- Este es el botón de envío del formulario. -->
+    <button type="submit">Agregar tarea</button>
     </div>
-  </form>
+</form>
